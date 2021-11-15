@@ -1,0 +1,11 @@
+// For a concrete list of 5 integers
+
+public static void miniMaxSum(List<Integer> arr) {
+        Collections.sort(arr);
+        
+        int least = arr.get(0) + arr.get(1) + arr.get(2) + arr.get(3);
+        int greatest = least - arr.get(0) + arr.get(4);
+        
+        System.out.print(least);
+        System.out.print(" " + greatest);
+    }
