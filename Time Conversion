@@ -1,0 +1,33 @@
+public static String timeConversion(String s) {
+        String[] time = s.split(":");
+        
+        String substring = time[2].substring(2, 4);
+        
+        int newTime;
+        String t;
+        String w;
+        
+        if (time[0].equals("12")) {
+            if (substring.equals("PM")) {
+                w = time[0] + ":" + time[1] + ":" + time[2];
+                w = w.replace("PM", "");
+            }
+            else {
+                time[0] = "0" + "0";
+                w = time[0] + ":" + time[1] + ":" + time[2];
+                w = w.replace("AM", "");
+            }
+        }
+        
+        else if (substring.equals("PM")) {
+            newTime = Integer.parseInt(time[0]) + 12;
+            t = Integer.toString(newTime);
+            w = t + ":" + time[1] + ":" + time[2];
+            w = w.replace("PM", "");
+        }
+        else {
+            w = time[0] + ":" + time[1] + ":" + time[2];
+            w = w.replace("AM", "");
+        }
+        return w;
+    }
